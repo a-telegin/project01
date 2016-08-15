@@ -27,7 +27,7 @@ public class Company{
 	}
 	
 	public void setForbesListIndex(int forbesListIndex){
-		this.assets = assets;
+		this.forbesListIndex = forbesListIndex;
 	}
 	public String getForbesListIndex(){
 		return this.forbesListIndex;
