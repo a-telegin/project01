@@ -1,5 +1,5 @@
 /**
- * Created by User on 15.08.16.
+ * Created by Andrey Telegin on 15.08.16.
  */
 public class SortCompany{
     public static void main(String[] args){
