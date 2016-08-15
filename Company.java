@@ -15,21 +15,21 @@ public class Company{
 	public void setProfit(int profit){
 		this.profit = profit;
 	}
-	public String getProfit(){
+	public int getProfit(){
 		return this.profit;
 	}
 	
 	public void setAssets(int assets){
 		this.assets = assets;
 	}
-	public String getAssets(){
+	public int getAssets(){
 		return this.assets;
 	}
 	
 	public void setForbesListIndex(int forbesListIndex){
 		this.forbesListIndex = forbesListIndex;
 	}
-	public String getForbesListIndex(){
+	public int getForbesListIndex(){
 		return this.forbesListIndex;
 	}
 }
