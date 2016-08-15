@@ -1,6 +1,6 @@
 public class SortCompany{
 	public static void main(String[] args){
-		final String LINE = "----------------------------------------------------";
+		
 		Company [] companyArray = new Company[10];
 		initCompanyArray(companyArray); 
 		
@@ -34,6 +34,8 @@ public class SortCompany{
 	*	gets Company array as it's input
 	*/
 	public static void printCompanyArray(Company[] arCompany){
+		final String LINE = "----------------------------------------------------";
+		System.out.println(LINE);
 		String nameWithSpaces = "";
 		int maxName = getLongestName(arCompany);
 		for (int i= 0; i<arCompany.length; i++){
@@ -63,6 +65,20 @@ public class SortCompany{
 	/* A long series of the same classic bubble-sorting methods to sort Companies by a field.
 	*	Repeating the code is bad, I know it.
 	*/
+	public static void sortBy(Company[] arCompany, String aField){
+		int len = arCompany.length;
+		//TODO universal function
+		case aField.equals()
+		for (int j=0; j<len-1; j++){
+			for (int i=0; i<len-1; i++){
+				if (arCompany[i+1].getAssets() > arCompany[i].getAssets()){
+					Company temp = arCompany[i+1];
+					arCompany[i+1] = arCompany[i];
+					arCompany[i] = temp;
+				}
+			}
+		}
+	}
 	public static void sortByAssets(Company[] arCompany){
 		int len = arCompany.length;
 		
@@ -209,4 +225,3 @@ public class SortCompany{
 		aCompanyArray[9] = carlsberg;	
 	}
 }
-
