@@ -32,4 +32,5 @@ public class Company{
 	public int getForbesListIndex(){
 		return this.forbesListIndex;
 	}
+	
 }

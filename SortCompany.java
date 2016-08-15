@@ -1,13 +1,61 @@
 public class SortCompany{
 	public static void main(String[] args){
+		final String LINE = "---------------------------------------------";
 		Company [] companyArray = new Company[10];
 		initCompanyArray(companyArray); 
 		
+		sortByForbesIndex(companyArray);
+		System.out.println(LINE);
+		System.out.println("Let's get the array sorted by Forbes list index.");
+		System.out.println(LINE);
+		printCompanyArrayName(companyArray);
+
+		sortByName(companyArray);
+		System.out.println(LINE);
+		System.out.println("Let's get the array sorted by name.");
+		System.out.println(LINE);
+		printCompanyArrayName(companyArray);
 		
+	}
+	
+	public static void printCompanyArrayName(Company[] arCompany){
+		for (int i= 0; i<arCompany.length; i++){
+			System.out.println(arCompany[i].getName());
+		}
+	}
+	
+	public static void sortByForbesIndex(Company[] arCompany){
+		int len = arCompany.length;
+		
+		for (int j=0; j<len-1; j++){
+			for (int i=0; i<len-1; i++){
+				if (arCompany[i+1].getForbesListIndex() < arCompany[i].getForbesListIndex()){
+					Company temp = arCompany[i+1];
+					arCompany[i+1] = arCompany[i];
+					arCompany[i] = temp;
+				}
+			}
+		}
+	}
+	public static void sortByName(Company[] arCompany){
+		int len = arCompany.length;
+		
+		for (int j=0; j<len-1; j++){
+			for (int i=0; i<len-1; i++){
+				/* int str1.compareToIgnoreCase(str2)*/
+				if (arCompany[i+1].getName().compareToIgnoreCase(arCompany[i].getName()) < 0){
+					Company temp = arCompany[i+1];
+					arCompany[i+1] = arCompany[i];
+					arCompany[i] = temp;
+				}
+			}
+		}
 	}
 	
 	public static void initCompanyArray(Company[] aCompanyArray){
 		//assert aCompanyArray.length == 10;
+		System.out.println("Initializing array...");
+		
 		
 		Company metinvest = new Company();
 		metinvest.setName("Metinvest");
