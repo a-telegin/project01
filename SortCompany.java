@@ -1,26 +1,93 @@
 public class SortCompany{
 	public static void main(String[] args){
-		final String LINE = "---------------------------------------------";
+		final String LINE = "----------------------------------------------------";
 		Company [] companyArray = new Company[10];
 		initCompanyArray(companyArray); 
+		
+		sortByProfit(companyArray);
+		System.out.println(LINE);
+		System.out.println("Let's get the array sorted by the company's profit.");
+		System.out.println(LINE);
+		printCompanyArray(companyArray);
+		
+		sortByAssets(companyArray);
+		System.out.println(LINE);
+		System.out.println("Let's get the array sorted by the company's assets.");
+		System.out.println(LINE);
+		printCompanyArray(companyArray);
 		
 		sortByForbesIndex(companyArray);
 		System.out.println(LINE);
 		System.out.println("Let's get the array sorted by Forbes list index.");
 		System.out.println(LINE);
-		printCompanyArrayName(companyArray);
+		printCompanyArray(companyArray);
 
 		sortByName(companyArray);
 		System.out.println(LINE);
-		System.out.println("Let's get the array sorted by name.");
+		System.out.println("Let's get the array sorted by the company's name.");
 		System.out.println(LINE);
-		printCompanyArrayName(companyArray);
+		printCompanyArray(companyArray);
 		
 	}
 	
-	public static void printCompanyArrayName(Company[] arCompany){
+	/*	prints out the "name", "profit", "assets" and "Forbes list index" fields of a Company in array 
+	*	gets Company array as it's input
+	*/
+	public static void printCompanyArray(Company[] arCompany){
+		String nameWithSpaces = "";
+		int maxName = getLongestName(arCompany);
 		for (int i= 0; i<arCompany.length; i++){
-			System.out.println(arCompany[i].getName());
+			nameWithSpaces = arCompany[i].getName();
+			while(nameWithSpaces.length() < maxName){
+				nameWithSpaces += " ";
+			}
+			System.out.println(nameWithSpaces+"\t"+arCompany[i].getProfit()+"\t"+arCompany[i].getAssets()+"\t"+arCompany[i].getForbesListIndex());
+		}
+		
+	}
+	
+	/*	To make pretty good-looking table we must know the longest name's length.
+	*	Just for an output purposes. To make it look good.
+	*/
+	static int getLongestName(Company[] arCompany){
+		int maxNameLength = arCompany[0].getName().length();
+		for (Company elem:arCompany){
+			if (elem.getName().length()>maxNameLength){
+				maxNameLength = elem.getName().length();
+			}
+		}
+		return maxNameLength;
+	}
+	
+	
+	/* A long series of the same classic bubble-sorting methods to sort Companies by a field.
+	*	Repeating the code is bad, I know it.
+	*/
+	public static void sortByAssets(Company[] arCompany){
+		int len = arCompany.length;
+		
+		for (int j=0; j<len-1; j++){
+			for (int i=0; i<len-1; i++){
+				if (arCompany[i+1].getAssets() > arCompany[i].getAssets()){
+					Company temp = arCompany[i+1];
+					arCompany[i+1] = arCompany[i];
+					arCompany[i] = temp;
+				}
+			}
+		}
+	}
+	
+	public static void sortByProfit(Company[] arCompany){
+		int len = arCompany.length;
+		
+		for (int j=0; j<len-1; j++){
+			for (int i=0; i<len-1; i++){
+				if (arCompany[i+1].getProfit() > arCompany[i].getProfit()){
+					Company temp = arCompany[i+1];
+					arCompany[i+1] = arCompany[i];
+					arCompany[i] = temp;
+				}
+			}
 		}
 	}
 	
@@ -37,6 +104,10 @@ public class SortCompany{
 			}
 		}
 	}
+	
+	/* This method is a bit different from the three above. A bit. Function 'compareToIgnoreCase()' really rocks!
+	*
+	*/
 	public static void sortByName(Company[] arCompany){
 		int len = arCompany.length;
 		
