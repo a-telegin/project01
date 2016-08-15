@@ -1,11 +1,12 @@
 public class SortCompany{
 	public static void main(String[] args){
-		Company [] companyArray = initCompanyArray(); 
+		Company [] companyArray = new Company[10];
+		initCompanyArray(companyArray); 
 	}
 }
 
-public Company[] initCompanyArray(){
-	Company [] companyArray = new Company[10];
+public initCompanyArray(Company[] aCompanyArray){
+	//assert aCompanyArray.length == 10;
 	
 	Company metinvest = new Company;
 	metinvest.setName("Metinvest");
@@ -13,7 +14,7 @@ public Company[] initCompanyArray(){
 	metinvest.setAssets(31756);
 	metinvest.setForbesListIndex(1);
 	
-	companyArray[0] = metinvest;
+	aCompanyArray[0] = metinvest;
 	
 	Company privatbank = new Company;
 	privatbank.setName("PrivatBank");
@@ -21,7 +22,7 @@ public Company[] initCompanyArray(){
 	privatbank.setAssets(204585);
 	privatbank.setForbesListIndex(3);
 	
-	companyArray[1] = privatbank;
+	aCompanyArray[1] = privatbank;
 	
 	Company motorsich = new Company;
 	motorsich.setName("Motor Sich");
@@ -29,7 +30,7 @@ public Company[] initCompanyArray(){
 	motorsich.setAssets(16041);
 	motorsich.setForbesListIndex(8);
 	
-	companyArray[2] = motorsich;
+	aCompanyArray[2] = motorsich;
 	
 	Company roshen = new Company;
 	roshen.setName("Roshen");
@@ -37,7 +38,7 @@ public Company[] initCompanyArray(){
 	roshen.setAssets(6577);
 	roshen.setForbesListIndex(13);
 	
-	companyArray[3] = roshen;
+	aCompanyArray[3] = roshen;
 	
 	Company philipmorris = new Company;
 	philipmorris.setName("Philip Morris Ukraine");
@@ -45,7 +46,7 @@ public Company[] initCompanyArray(){
 	philipmorris.setAssets(4137);
 	philipmorris.setForbesListIndex(17);
 	
-	companyArray[4] = philipmorris;
+	aCompanyArray[4] = philipmorris;
 	
 	Company atb = new Company;
 	atb.setName("ATB-Market");
@@ -53,7 +54,7 @@ public Company[] initCompanyArray(){
 	atb.setAssets(5461);
 	atb.setForbesListIndex(29);
 	
-	companyArray[5] = atb;
+	aCompanyArray[5] = atb;
 	
 	Company epicentr = new Company;
 	epicentr.setName("Epitsentr K");
@@ -61,7 +62,7 @@ public Company[] initCompanyArray(){
 	epicentr.setAssets(11240);
 	epicentr.setForbesListIndex(9);
 	
-	companyArray[6] = epicentr;
+	aCompanyArray[6] = epicentr;
 	
 	Company ukrtatnafta = new Company;
 	ukrtatnafta.setName("UkrTatNafta");
@@ -69,7 +70,7 @@ public Company[] initCompanyArray(){
 	ukrtatnafta.setAssets(8720);
 	ukrtatnafta.setForbesListIndex(15);
 	
-	companyArray[7] = ukrtatnafta;
+	aCompanyArray[7] = ukrtatnafta;
 	
 	Company kievstar = new Company;
 	kievstar.setName("Kyivstar");
@@ -77,7 +78,7 @@ public Company[] initCompanyArray(){
 	kievstar.setAssets(13513);
 	kievstar.setForbesListIndex(4);
 	
-	companyArray[8] = kievstar;
+	aCompanyArray[8] = kievstar;
 	
 	Company carlsberg = new Company;
 	carlsberg.setName("Carlsberg Ukraine");
@@ -85,5 +86,7 @@ public Company[] initCompanyArray(){
 	carlsberg.setAssets(4065);
 	carlsberg.setForbesListIndex(23);
 	
-	companyArray[9] = carlsberg;
+	aCompanyArray[9] = carlsberg;
+	
+	return aCompanyArray;
 }
