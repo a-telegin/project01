@@ -45,7 +45,7 @@ public class SortCompany{
     }
 
     /*	To make pretty good-looking table we must know the longest name's length.
-    *	Just for an output purposes.
+    *	Just for the output purposes.
     */
     static int getLongestName(Company[] arCompany){
         int maxNameLength = arCompany[0].getName().length();
